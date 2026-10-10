@@ -109,14 +109,14 @@
     margin-bottom: 32px;
   }
 
-  // Interactive cards section directly in hero
+  // Interactive cards section directly in hero - 80% screen width on desktop
   &-cards-container {
-    width: 100%;
-    max-width: $container-max-width;
-    margin-top: 36px;
+    width: 80vw;
+    max-width: 1540px;
+    margin-top: 40px;
     display: flex;
-    gap: 12px;
-    height: 480px;
+    gap: 16px;
+    height: 520px;
     position: relative;
     box-sizing: border-box;
 
@@ -124,99 +124,22 @@
     @media (max-width: $bp-mobile) {
       display: none !important;
     }
-  }
 
-  .hero-card {
-    position: relative;
-    flex: 1;
-    min-width: 0;
-    height: 100%;
-    border-radius: 14px;
-    overflow: hidden;
-    cursor: pointer;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: flex 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.4s ease,
-                box-shadow 0.4s ease;
-    will-change: flex;
-
-    .card-bg-gradient {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, #d34a00 0%, #150a05 100%);
-      opacity: 0.85;
-      z-index: 0;
-      transition: opacity 0.4s ease;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-        opacity: 0.2;
-        mix-blend-mode: overlay;
-      }
-    }
-
-    .card-bg-dark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, #141416 0%, #09090b 100%);
-      opacity: 0;
-      z-index: 1;
-      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
-      &.active {
-        opacity: 1;
-      }
-    }
-
-    .card-title-vertical {
-      position: absolute;
-      bottom: 24px;
-      left: 36px;
-      transform: rotate(-90deg);
-      transform-origin: left bottom;
-      white-space: nowrap;
-      font-size: 24px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: -0.01em;
-      z-index: 2;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-
-      &.hidden {
-        opacity: 0;
-      }
-    }
-
-    &.is-compressed {
+    // Smooth hover behavior: unhovered cards compress smoothly
+    &:hover .hero-card {
       flex: 0.72;
 
       .card-bg-gradient {
-        opacity: 0.7;
+        opacity: 0.65;
       }
     }
 
-    &.is-hovered {
-      flex: 3.6;
-      border-color: rgba(255, 255, 255, 0.16);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba($color-primary, 0.2);
+    // Hovered card expands smoothly
+    .hero-card:hover,
+    .hero-card.is-hovered {
+      flex: 3.8 !important;
+      border-color: rgba(255, 255, 255, 0.22) !important;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba($color-primary, 0.25) !important;
 
       .card-bg-gradient {
         opacity: 0;
@@ -226,21 +149,107 @@
         opacity: 1;
       }
 
+      .card-title-vertical {
+        opacity: 0;
+      }
+
+      .card-expanded-content {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.08s;
+      }
+
       .card-preview-image {
-        transform: scale(1.02);
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  .hero-card {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: flex 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+    will-change: flex;
+
+    .card-bg-gradient {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #d34a00 0%, #150a05 100%);
+      opacity: 0.85;
+      z-index: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+        pointer-events: none;
       }
     }
 
+    .card-bg-dark {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #141416 0%, #09090b 100%);
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-title-vertical {
+      position: absolute;
+      bottom: 28px;
+      left: 36px;
+      transform: rotate(-90deg);
+      transform-origin: left bottom;
+      white-space: nowrap;
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.01em;
+      z-index: 2;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
     .card-expanded-content {
-      position: relative;
+      position: absolute;
+      inset: 0;
       z-index: 2;
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 24px 28px 28px;
+      padding: 28px 30px 30px;
       box-sizing: border-box;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
       .card-image-wrapper {
         flex: 1;
@@ -249,13 +258,15 @@
         justify-content: center;
         overflow: hidden;
         padding: 8px 0;
+        pointer-events: none;
 
         .card-preview-image {
           max-width: 95%;
-          max-height: 280px;
+          max-height: 290px;
           object-fit: contain;
           filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.8));
-          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          pointer-events: none;
         }
       }
 
@@ -264,6 +275,7 @@
         margin-top: auto;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
         padding-top: 18px;
+        pointer-events: none;
 
         .card-expanded-title {
           font-size: 26px;
@@ -272,12 +284,13 @@
           margin: 0 0 8px 0;
           letter-spacing: -0.4px;
           line-height: 1.2;
+          white-space: nowrap;
         }
 
         .card-expanded-desc {
           font-size: 14px;
           line-height: 1.5;
-          color: rgba(255, 255, 255, 0.75);
+          color: rgba(255, 255, 255, 0.78);
           margin: 0;
           max-width: 90%;
         }
