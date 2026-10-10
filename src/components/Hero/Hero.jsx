@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Hero.scss';
 import Button from '../Button/Button';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import heroImg from '../../assets/hero.png';
 
 const servicesCards = [
@@ -101,7 +101,7 @@ const Hero = () => {
           </Button>
         </motion.div>
 
-        {/* Interactive Cards Section - hidden in mobile */}
+        {/* Interactive Cards Section - 80% screen width on desktop, hidden on mobile */}
         <motion.div 
           className="hero-cards-container"
           id="services"
@@ -112,49 +112,39 @@ const Hero = () => {
         >
           {servicesCards.map((card) => {
             const isHovered = hoveredId === card.id;
-            const isAnyHovered = hoveredId !== null;
 
             return (
               <div 
                 key={card.id}
-                className={`hero-card ${isHovered ? 'is-hovered' : ''} ${isAnyHovered && !isHovered ? 'is-compressed' : ''}`}
+                className={`hero-card ${isHovered ? 'is-hovered' : ''}`}
                 onMouseEnter={() => setHoveredId(card.id)}
                 onClick={() => setHoveredId(isHovered ? null : card.id)}
               >
                 {/* Background layers */}
                 <div className="card-bg-gradient"></div>
-                <div className={`card-bg-dark ${isHovered ? 'active' : ''}`}></div>
+                <div className="card-bg-dark"></div>
 
                 {/* Vertical Title (visible when unhovered) */}
-                <span className={`card-title-vertical ${isHovered ? 'hidden' : ''}`}>
+                <span className="card-title-vertical">
                   {card.title}
                 </span>
 
-                {/* Expanded Content (visible when hovered) */}
-                <AnimatePresence>
-                  {isHovered && (
-                    <motion.div 
-                      className="card-expanded-content"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="card-image-wrapper">
-                        <img 
-                          src={card.image} 
-                          alt={card.title} 
-                          className="card-preview-image"
-                        />
-                      </div>
+                {/* Expanded Content (smoothly faded in on hover without DOM thrashing) */}
+                <div className="card-expanded-content">
+                  <div className="card-image-wrapper">
+                    <img 
+                      src={card.image} 
+                      alt={card.title} 
+                      className="card-preview-image"
+                      loading="eager"
+                    />
+                  </div>
 
-                      <div className="card-info-pane">
-                        <h3 className="card-expanded-title">{card.title}</h3>
-                        <p className="card-expanded-desc">{card.description}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                  <div className="card-info-pane">
+                    <h3 className="card-expanded-title">{card.title}</h3>
+                    <p className="card-expanded-desc">{card.description}</p>
+                  </div>
+                </div>
               </div>
             );
           })}
