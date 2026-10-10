@@ -1,8 +1,13 @@
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import Works from './components/Works/Works';
+import Industries from './components/Industries/Industries';
+import Process from './components/Process/Process';
 import Clients from './components/Clients/Clients';
 import About from './components/About/About';
-import Services from './components/Services/Services';
+import Testimonials from './components/Testimonials/Testimonials';
+import CTA from './components/CTA/CTA';
+import FAQ from './components/FAQ/FAQ';
 
 function App() {
   return (
@@ -10,9 +15,14 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Services />
+        <Works />
+        <Industries />
+        <Process />
         <Clients />
         <About />
+        <Testimonials />
+        <CTA />
+        <FAQ />
       </main>
     </div>
   );
