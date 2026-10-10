@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: $font-family-base;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+
+  &-icon {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .btn-icon {
+    transform: translate(2px, -2px);
+  }
+
+  &-primary {
+    background: linear-gradient(to bottom, $color-primary 100%, #000 100%, #fff 100%, #fff 25% );
+    color: #fff;
+
+    &:hover {
+      background-color: $color-primary-hover;
+      box-shadow: 0 4px 12px rgba($color-primary, 0.4);
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import '../../styles/variables';
+
+.services {
+  padding: 40px 24px 120px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+
+  &-container {
+    width: 100%;
+    max-width: $container-max-width;
+  }
+
+  &-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+
+    @media (min-width: $bp-tablet) {
+      flex-direction: row;
+      height: 400px;
+      gap: 12px;
+    }
+  }
+
+  .service-card {
+    position: relative;
+    flex: 1;
+    min-height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+
+    @media (min-width: $bp-tablet) {
+      min-height: auto;
+    }
+
+    .card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #d34a00 0%, #150a05 100%);
+      opacity: 0.8;
+      z-index: 0;
+      transition: opacity 0.3s ease;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+      }
+    }
+
+    &:hover .card-bg {
+      opacity: 1;
+    }
+
+    .card-title {
+      position: relative;
+      z-index: 1;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      margin: 0;
+
+      @media (min-width: $bp-tablet) {
+        transform: rotate(-90deg);
+        transform-origin: left bottom;
+        white-space: nowrap;
+        position: absolute;
+        bottom: 24px;
+        left: 36px;
+        font-size: 24px;
+        letter-spacing: -0.01em;
+      }
+    }
+  }
+}

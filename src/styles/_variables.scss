@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "CustomFont";
+  // The browser will check for locally installed OS fonts first, then fallback to your file
+  src: local("CustomFont Regular"), 
+       local("CustomFont-Regular"),
+       url("../assets/fonts/VAG\ Rounded\ Next\ Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; // Optimizes rendering performance
+}
+
+// Colors
+$color-bg: #0a0a0a;
+$color-text: #ffffff;
+$color-text-muted: #a0a0a0;
+$color-primary: #CC3D00;
+$color-primary-hover: rgba(239, 108, 0, 0.829);
+$color-gradient-start: #CC3D00;
+$color-gradient-end: #3e1600;
+
+// Typography
+$font-family-base: 'Inter', sans-serif;
+$font-primary: 'CustomFont', sans-serif;
+$font-size-base: 16px;
+
+// Breakpoints
+$bp-mobile: 768px;
+$bp-tablet: 1024px;
+$bp-desktop: 1280px;
+
+// Layout
+$container-max-width: 1200px;
