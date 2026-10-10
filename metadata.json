@@ -1,0 +1,8 @@
+{
+  "name": "Aspirant Ideas",
+  "description": "Premium Digital Marketing for Ambitious Brands. We craft data-driven digital strategies.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

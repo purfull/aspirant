@@ -1,0 +1,212 @@
+@import '../../styles/variables';
+
+.industries {
+  padding: 80px 24px 120px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+
+  &-container {
+    width: 100%;
+    max-width: $container-max-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-header {
+    text-align: center;
+    margin-bottom: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba($color-primary, 0.4);
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    color: $color-primary;
+    margin-bottom: 24px;
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $color-primary;
+    }
+  }
+
+  &-title {
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    color: #fff;
+    line-height: 1.15;
+
+    @media (min-width: $bp-tablet) {
+      font-size: 54px;
+    }
+
+    em {
+      font-style: italic;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $bp-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .industry-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    min-height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #111114;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+
+    .card-media-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .card-bg-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, filter;
+      }
+
+      .card-gradient-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.85) 100%);
+        transition: opacity 0.4s ease;
+      }
+    }
+
+    // Default label at bottom
+    .card-default-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 16px;
+      text-align: center;
+      z-index: 2;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+
+      .label-text {
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: -0.2px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    // Hover overlay with blur and text transformation
+    .card-hover-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 24px;
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, 0.52);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                  background-color 0.45s ease;
+
+      .hover-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: translateY(14px);
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .hover-description {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #ffffff;
+        margin: 0 0 16px 0;
+        letter-spacing: -0.2px;
+
+        @media (max-width: $bp-mobile) {
+          font-size: 15px;
+        }
+      }
+
+      .hover-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: $color-primary;
+        letter-spacing: 0.2px;
+      }
+    }
+
+    // Hover state triggers
+    &:hover,
+    &.touch-active {
+      border-color: rgba($color-primary, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba($color-primary, 0.2);
+
+      .card-bg-photo {
+        transform: scale(1.14);
+        filter: blur(12px) brightness(0.6);
+      }
+
+      .card-default-label {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      .card-hover-overlay {
+        opacity: 1;
+        pointer-events: auto;
+
+        .hover-content {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

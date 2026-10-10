@@ -1,0 +1,112 @@
+@import '../../styles/variables';
+
+.cta-section {
+  position: relative;
+  padding: 140px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+  min-height: 520px;
+  box-sizing: border-box;
+
+  @media (max-width: $bp-mobile) {
+    padding: 100px 20px;
+    min-height: 440px;
+  }
+
+  // Scroll-triggered blooming orange ambient background gradient
+  .cta-bg-gradient-glow {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1;
+
+    .glow-radial-core {
+      width: 100%;
+      max-width: 900px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba($color-primary, 0.55) 0%,
+        rgba(180, 55, 0, 0.35) 35%,
+        rgba(60, 20, 0, 0.15) 60%,
+        transparent 80%
+      );
+      filter: blur(50px);
+      animation: ambientGlowPulse 4s ease-in-out infinite alternate;
+    }
+  }
+
+  // Dot grid texture
+  .cta-bg-texture {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.16;
+    pointer-events: none;
+    z-index: 2;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  }
+
+  // Content pane
+  .cta-container {
+    position: relative;
+    z-index: 3;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cta-heading {
+      font-size: 52px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -2px;
+      margin: 0 0 20px 0;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 68px;
+        letter-spacing: -2.5px;
+      }
+    }
+
+    .cta-subheading {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 580px;
+      margin: 0 0 36px 0;
+
+      @media (min-width: $bp-tablet) {
+        font-size: 18px;
+      }
+    }
+
+    .cta-button-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@keyframes ambientGlowPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}

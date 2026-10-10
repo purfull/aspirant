@@ -1,0 +1,129 @@
+@import '../../styles/variables';
+
+.process {
+  padding: 60px 24px 100px;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+
+  &-card-frame {
+    position: relative;
+    width: 100%;
+    max-width: $container-max-width;
+    background: #0d0d0d;
+    border-radius: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 2px solid rgba($color-primary, 0.7);
+    box-shadow: 0 24px 70px -15px rgba(0, 0, 0, 0.9), 0 20px 50px -20px rgba($color-primary, 0.45);
+    padding: 72px 48px;
+    overflow: hidden;
+
+    @media (max-width: $bp-mobile) {
+      padding: 48px 20px;
+      border-radius: 24px;
+    }
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  &-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba($color-primary, 0.35);
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    color: $color-primary;
+    margin-bottom: 24px;
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $color-primary;
+    }
+  }
+
+  &-title {
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.15;
+
+    @media (min-width: $bp-tablet) {
+      font-size: 54px;
+    }
+
+    em {
+      font-style: italic;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+
+  &-subtitle {
+    font-size: 15px;
+    color: $color-text-muted;
+    max-width: 520px;
+    line-height: 1.5;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px 48px;
+
+    @media (min-width: $bp-mobile) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 64px;
+      column-gap: 56px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .item-icon {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover .item-icon {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .item-title {
+      font-size: 22px;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .item-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 380px;
+      margin: 0 auto;
+    }
+  }
+}

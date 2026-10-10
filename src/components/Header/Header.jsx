@@ -22,16 +22,26 @@ const Header = () => {
 
         <nav className="header-nav">
           <ul>
-            <li><a href="#process">Process</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#plans">Plans</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </nav>
 
         <div className="header-cta">
-          <Button variant="primary">Let's Talk</Button>
+          <Button 
+            variant="primary"
+            onClick={() => {
+              const el = document.getElementById('contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Let's Talk
+          </Button>
         </div>
       </div>
     </motion.header>
