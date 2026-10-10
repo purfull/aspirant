@@ -2,97 +2,159 @@ import { useState, useEffect, useRef } from 'react';
 import './Works.scss';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, SlidersHorizontal, Check } from 'lucide-react';
+import i1 from "../../assets/images/industries/1.jpg";
+import i2 from "../../assets/images/industries/1.png";
+import i3 from "../../assets/images/industries/2.jpg";
+import i4 from "../../assets/images/industries/2.png";
+import i5 from "../../assets/images/industries/3.jpg";
+import i6 from "../../assets/images/industries/3.png";
+import i7 from "../../assets/images/industries/4.jpg";
+import i8 from "../../assets/images/industries/4.png";
+import i9 from "../../assets/images/industries/5.jpg";
+import i10 from "../../assets/images/industries/6.jpg";
+import i11 from "../../assets/images/industries/6.png";
+import i12 from "../../assets/images/industries/7.jpg";
+
+import i13 from "../../assets/images/industries/7.png";
+import i14 from "../../assets/images/industries/8.jpg";
+import i15 from "../../assets/images/industries/9.jpg";
+import i16 from "../../assets/images/industries/11.jpg";
+import i17 from "../../assets/images/industries/12.jpg";
+import i18 from "../../assets/images/industries/13.jpg";
+import i19 from "../../assets/images/industries/14.jpg";
+import i20 from "../../assets/images/industries/15.jpg";
+import i21 from "../../assets/images/industries/16.jpg";
+import i22 from "../../assets/images/industries/17.jpg";
+import i23 from "../../assets/images/industries/18.jpg";
+
+import i24 from "../../assets/images/industries/19.jpg";
+import i25 from "../../assets/images/industries/20.jpg";
+import i26 from "../../assets/images/industries/21.jpg";
+import i27 from "../../assets/images/industries/22.jpg";
+import i28 from "../../assets/images/industries/23.jpg";
+import i29 from "../../assets/images/industries/24.jpg";
+import i30 from "../../assets/images/industries/25.jpg";
+import i31 from "../../assets/images/industries/26.jpg";
+import i32 from "../../assets/images/industries/27.jpg";
+import i33 from "../../assets/images/industries/28.jpg";
+import i34 from "../../assets/images/industries/29.jpg";
+import i35 from "../../assets/images/industries/30.jpg";
+import i36 from "../../assets/images/industries/31.jpg";
 
 const row1 = [
   {
-    id: 'w1',
-    title: 'Listing Images Optimization',
-    category: 'E-Commerce & Amazon',
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80',
-    tag: 'Listing Images'
+    image: i1,
   },
   {
-    id: 'w2',
-    title: 'Summer Lifestyle Campaign',
-    category: 'Brand Shoot',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop&q=80',
-    tag: 'Campaign'
+    image: i2,
   },
   {
-    id: 'w3',
-    title: 'Urban Billboard Takeover',
-    category: 'Out of Home Media',
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80',
-    tag: 'Billboard'
+    image: i3
   },
   {
-    id: 'w4',
-    title: 'Fintech Dashboard & Mobile App',
-    category: 'UI/UX Design',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80',
-    tag: 'App UI'
+    image: i4,
+  },
+  {
+    image: i5,
+  },
+  {
+    image: i6,
+  },
+  {
+    image: i7
+  },
+  {
+    image: i8,
+  },
+  {
+    image: i9,
+  },
+  {
+    image: i10,
+  },
+  {
+    image: i11
+  },
+  {
+    image: i12,
   }
 ];
 
 const row2 = [
   {
-    id: 'w5',
-    title: 'Kratos Monolith Identity',
-    category: 'Brand Identity',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80',
-    tag: 'Branding'
+    image: i13,
   },
   {
-    id: 'w6',
-    title: 'Magazine Editorial & Poster',
-    category: 'Print & Creatives',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop&q=80',
-    tag: 'Editorial'
+    image: i14,
   },
   {
-    id: 'w7',
-    title: 'Health & Analytics Mobile Platform',
-    category: 'Product Design',
-    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&auto=format&fit=crop&q=80',
-    tag: 'SaaS UI'
+    image: i15
   },
   {
-    id: 'w8',
-    title: 'Minimalist Architecture Agency',
-    category: 'Web Experience',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80',
-    tag: 'Web Design'
+    image: i16,
+  },
+  {
+    image: i17,
+  },
+  {
+    image: i18,
+  },
+  {
+    image: i19
+  },
+  {
+    image: i20,
+  },
+  {
+    image: i21,
+  },
+  {
+    image: i22,
+  },
+  {
+    image: i23
+  },
+  {
+    image: i24,
   }
 ];
 
 const row3 = [
   {
-    id: 'w9',
-    title: 'Dark Mode Digital SaaS Platform',
-    category: 'Web Development',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80',
-    tag: 'Web Platform'
+    image: i25,
   },
   {
-    id: 'w10',
-    title: 'Conversion-Focused Product Showcase',
-    category: 'Listing Images',
-    image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&auto=format&fit=crop&q=80',
-    tag: 'Listing Images'
+    image: i26,
   },
   {
-    id: 'w11',
-    title: 'Luxury Fashion & Logo Design',
-    category: 'Visual Identity',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80',
-    tag: 'Logo Design'
+    image: i27
   },
   {
-    id: 'w12',
-    title: 'Studio Commercial Photography',
-    category: 'Media Production',
-    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&auto=format&fit=crop&q=80',
-    tag: 'Studio Shoot'
+    image: i28,
+  },
+  {
+    image: i29,
+  },
+  {
+    image: i30,
+  },
+  {
+    image: i31
+  },
+  {
+    image: i32,
+  },
+  {
+    image: i33,
+  },
+  {
+    image: i34,
+  },
+  {
+    image: i35
+  },
+  {
+    image: i36,
   }
 ];
 
@@ -175,11 +237,11 @@ const Works = ({
             <div className="marquee-track scroll-left">
               {[...row1, ...row1].map((item, idx) => (
                 <div className="work-card" key={`r1-${idx}`}>
-                  <img src={item.image} alt={item.title} className="card-thumb" />
-                  <div className="card-overlay">
+                  <img src={item.image} className="card-thumb" />
+                  {/* <div className="card-overlay">
                     <span className="card-tag">{item.tag}</span>
                     <h4 className="card-name">{item.title}</h4>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
@@ -190,11 +252,11 @@ const Works = ({
             <div className="marquee-track scroll-right">
               {[...row2, ...row2].map((item, idx) => (
                 <div className="work-card" key={`r2-${idx}`}>
-                  <img src={item.image} alt={item.title} className="card-thumb" />
-                  <div className="card-overlay">
+                  <img src={item.image} className="card-thumb" />
+                  {/* <div className="card-overlay">
                     <span className="card-tag">{item.tag}</span>
                     <h4 className="card-name">{item.title}</h4>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
@@ -205,11 +267,11 @@ const Works = ({
             <div className="marquee-track scroll-left">
               {[...row3, ...row3].map((item, idx) => (
                 <div className="work-card" key={`r3-${idx}`}>
-                  <img src={item.image} alt={item.title} className="card-thumb" />
-                  <div className="card-overlay">
+                  <img src={item.image} className="card-thumb" />
+                  {/* <div className="card-overlay">
                     <span className="card-tag">{item.tag}</span>
                     <h4 className="card-name">{item.title}</h4>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
