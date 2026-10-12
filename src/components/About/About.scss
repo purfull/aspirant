@@ -16,22 +16,27 @@
   }
 
   &-badge {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 16px;
-    border: 1px solid rgba($color-primary, 0.3);
+    padding: 7px 20px;
+    background: linear-gradient(180deg, #FF4C00 0%, #45261D 100%);
+    border: 1px solid rgba(255, 76, 0, 0.35);
     border-radius: 40px;
-    font-size: 13px;
+    font-size: 13.5px;
     font-weight: 500;
-    color: $color-primary;
+    color: #FF4C00;
     margin-bottom: 32px;
+    box-shadow: none;
 
     .dot {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
-      background-color: $color-primary;
+      background-color: #FF4C00;
+      box-shadow: none;
+      flex-shrink: 0;
     }
   }
 

@@ -24,12 +24,13 @@
   }
 
   &-primary {
-    background: linear-gradient(to bottom, $color-primary 100%, #000 100%, #fff 100%, #fff 25% );
+    background: linear-gradient(180deg, #FF4C00 0%, #45261D 100%);
     color: #fff;
+    box-shadow: none;
 
     &:hover {
-      background-color: $color-primary-hover;
-      box-shadow: 0 4px 12px rgba($color-primary, 0.4);
+      background: linear-gradient(180deg, lighten(#FF4C00, 5%) 0%, lighten(#45261D, 5%) 100%);
+      box-shadow: none;
     }
   }
 
