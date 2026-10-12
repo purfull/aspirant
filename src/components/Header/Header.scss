@@ -80,55 +80,43 @@
     }
   }
 
-  // Hamburger menu button for mobile & tablet
+  // Hamburger menu button for mobile & tablet (Matching Image 2 & 3)
   &-burger-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
     cursor: pointer;
     padding: 0;
-    gap: 5px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 5.5px;
+    transition: transform 0.3s ease;
     z-index: 102;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba($color-primary, 0.5);
-    }
-
     .burger-line {
-      width: 18px;
-      height: 2px;
+      width: 24px;
+      height: 2.5px;
       background-color: #ffffff;
       border-radius: 2px;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                  opacity 0.25s ease,
-                  background-color 0.3s ease;
+                  opacity 0.25s ease;
       transform-origin: center;
     }
 
-    // Smooth transformation into Close (X) icon
+    // Smooth transformation into Close (X) icon (Image 3)
     &.open {
-      background: rgba($color-primary, 0.15);
-      border-color: rgba($color-primary, 0.55);
-
       .line-1 {
-        transform: translateY(7px) rotate(45deg);
-        background-color: $color-primary;
+        transform: translateY(8px) rotate(45deg);
       }
       .line-2 {
         opacity: 0;
         transform: scaleX(0);
       }
       .line-3 {
-        transform: translateY(-7px) rotate(-45deg);
-        background-color: $color-primary;
+        transform: translateY(-8px) rotate(-45deg);
       }
     }
 
@@ -142,9 +130,9 @@
 .mobile-menu-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 95;
 
   @media (min-width: $bp-tablet) {
@@ -152,24 +140,22 @@
   }
 }
 
-// Slide from top to half screen menu
+// Slide from top to half screen menu (Matching Image 1)
 .mobile-menu-drawer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 52vh;
-  min-height: 390px;
-  max-height: 520px;
-  background: rgba(12, 12, 15, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  min-height: 400px;
+  max-height: 540px;
+  background: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba($color-primary, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
   z-index: 98;
   display: flex;
   flex-direction: column;
-  padding: 88px 24px 20px;
+  padding: 92px 36px 36px;
   box-sizing: border-box;
   overflow-y: auto;
 
@@ -179,69 +165,74 @@
 
   .mobile-menu-inner {
     width: 100%;
-    max-width: 580px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    gap: 24px;
   }
 
+  // Pure minimalist left-aligned link list (Image 1)
   .mobile-nav-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 14px;
-
-    @media (max-width: 480px) {
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
 
     .mobile-nav-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 14px;
+      font-size: 19px;
       font-weight: 500;
+      color: #ffffff;
       text-decoration: none;
-      transition: all 0.25s ease;
-
-      .item-arrow {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.35);
-        transition: transform 0.25s ease, color 0.25s ease;
-      }
+      letter-spacing: -0.3px;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      transition: color 0.2s ease, transform 0.2s ease;
 
       &:hover,
       &:active {
-        background: rgba($color-primary, 0.15);
-        border-color: rgba($color-primary, 0.45);
-        color: #ffffff;
+        color: $color-primary;
         transform: translateX(4px);
-
-        .item-arrow {
-          color: $color-primary;
-          transform: translateX(3px);
-        }
       }
     }
   }
 
+  // Orange pill button (Image 1)
   .mobile-menu-cta {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 6px;
+    width: auto;
+    margin-top: 6px;
 
-    .mobile-cta-btn {
-      width: 100%;
+    .mobile-talk-btn {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
+      gap: 10px;
+      background: $color-primary;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba($color-primary, 0.4);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+
+      &:hover,
+      &:active {
+        background: $color-primary-hover;
+        transform: scale(1.03);
+      }
+
+      .arrow-icon {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1;
+      }
     }
   }
 }

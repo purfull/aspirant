@@ -4,13 +4,14 @@ import Button from '../Button/Button';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
+  { name: 'Process', href: '#process' },
   { name: 'Services', href: '#services' },
   { name: 'Works', href: '#works' },
   { name: 'Industries', href: '#industries' },
-  { name: 'Process', href: '#process' },
   { name: 'About', href: '#about' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'FAQ', href: '#faq' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const Header = () => {
@@ -87,7 +88,7 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* Mobile & Tablet Burger Menu Button */}
+          {/* Mobile & Tablet Burger Menu Button (smooth morph from 3 bars to X) */}
           <button 
             type="button"
             className={`header-burger-btn ${isMenuOpen ? 'open' : ''}`}
@@ -102,7 +103,7 @@ const Header = () => {
         </div>
       </motion.header>
 
-      {/* Mobile & Tablet Half-Screen Slide Menu */}
+      {/* Mobile & Tablet Half-Screen Slide Menu (Matching Image 1) */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
@@ -112,47 +113,49 @@ const Header = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.25 }}
               onClick={() => setIsMenuOpen(false)}
             />
 
-            {/* Slide down half-screen drawer */}
+            {/* Slide down half-screen drawer with pure black minimalist style */}
             <motion.div 
               className="mobile-menu-drawer"
               initial={{ y: '-100%', opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: '-100%', opacity: 0 }}
-              transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="mobile-menu-inner">
+                {/* Clean, left-aligned minimalist link list */}
                 <nav className="mobile-nav-list">
                   {navLinks.map((link, idx) => (
                     <motion.a
                       key={link.name}
                       href={link.href}
                       className="mobile-nav-item"
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.25, delay: 0.04 + idx * 0.03 }}
+                      initial={{ opacity: 0, x: -12 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.22, delay: 0.03 + idx * 0.025 }}
                       onClick={(e) => handleNavClick(e, link.href)}
                     >
-                      <span className="item-name">{link.name}</span>
-                      <span className="item-arrow">→</span>
+                      {link.name}
                     </motion.a>
                   ))}
                 </nav>
 
+                {/* Orange pill button with right arrow */}
                 <div className="mobile-menu-cta">
-                  <Button 
-                    variant="primary"
-                    className="mobile-cta-btn"
+                  <button 
+                    type="button"
+                    className="mobile-talk-btn"
                     onClick={() => {
                       setIsMenuOpen(false);
                       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                     }}
                   >
-                    Let's Talk
-                  </Button>
+                    <span>Let's Talk</span>
+                    <span className="arrow-icon">↗</span>
+                  </button>
                 </div>
               </div>
             </motion.div>
