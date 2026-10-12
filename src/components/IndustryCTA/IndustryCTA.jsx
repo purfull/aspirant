@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import { motion } from 'framer-motion';
 
 // Deterministic particles generated at module level for pure rendering
-const PARTICLES = Array.from({ length: 42 }).map((_, i) => {
+const PARTICLES = Array.from({ length: 102 }).map((_, i) => {
   const pseudo1 = ((i * 37 + 13) % 100) / 100;
   const pseudo2 = ((i * 73 + 29) % 100) / 100;
   const pseudo3 = ((i * 19 + 7) % 100) / 100;

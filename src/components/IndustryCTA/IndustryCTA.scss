@@ -28,20 +28,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 140%;
-    height: 180%;
+    width: 75%;
+    height: 150%;
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 1;
-    animation: rotateCircularGlow 8s linear infinite;
+    animation: rotateCircularGlow 16s linear infinite;
     will-change: transform;
 
     .circular-gradient-orb {
       position: absolute;
-      top: 10%;
-      left: 15%;
-      width: 520px;
-      height: 440px;
+      top: 20%;
+      left: 5%;
+      width: 620px;
+      height: 740px;
       border-radius: 50%;
       background: radial-gradient(
         ellipse at center,

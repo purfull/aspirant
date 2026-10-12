@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 const navLinks = [
   { name: 'Process', href: '#process' },
   { name: 'Services', href: '#services' },
-  { name: 'Works', href: '#works' },
-  { name: 'Industries', href: '#industries' },
-  { name: 'About', href: '#about' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Benefits', href: '#penefits' },
+  { name: 'Plans', href: '#plans' },
+  // { name: 'About', href: '#about' },
+  // { name: 'Testimonials', href: '#testimonials' },
+  // { name: 'FAQ', href: '#faq' },
   { name: 'Contact', href: '#contact' },
 ];
 
