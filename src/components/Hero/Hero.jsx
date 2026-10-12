@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './Hero.scss';
 import Button from '../Button/Button';
 import { motion } from 'framer-motion';
-import heroImg from '../../assets/hero.png';
 import photography from '../../assets/images/hero/photography.jpg';
 import seo from '../../assets/images/hero/seo.jpg';
 import marketing from '../../assets/images/hero/marketing-strategy.jpg';
