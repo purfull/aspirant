@@ -86,7 +86,6 @@ const Testimonials = () => {
               key={item.id} 
               className="testimonial-card"
               variants={cardVariants}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
             >
               <p className="testimonial-quote">
                 "{item.quote}"

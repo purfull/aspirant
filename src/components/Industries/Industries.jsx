@@ -2,41 +2,49 @@ import { useState } from 'react';
 import './Industries.scss';
 import IndustryCTA from '../IndustryCTA/IndustryCTA';
 import { motion } from 'framer-motion';
+import automobile from "../../assets/images/other-industries/automobile.jpg";
+import otherAgencies from "../../assets/images/other-industries/other-agencies.jpg";
+import spa from "../../assets/images/other-industries/spa.jpg";
+import retailStores from "../../assets/images/other-industries/retail-stores.jpg";
+import educationalInstitutions from "../../assets/images/other-industries/educational-institutions.jpg";
+import luxuryLodges from "../../assets/images/other-industries/luxury-lodges.jpg";
+import restaurantsFood from "../../assets/images/other-industries/restaurants-food.jpg";
+import corporateCompanies from "../../assets/images/other-industries/corporate-companies.jpg";
 
 const industriesData = [
   {
     id: 1,
     title: 'Educational Institutions',
     description: 'We create intuitive platforms that simplify learning and administration. Focused on accessibility, clarity, and seamless user experiences.',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700&auto=format&fit=crop&q=80'
+    image: educationalInstitutions
   },
   {
     id: 2,
     title: 'Luxury Lodges',
     description: 'Elevating boutique hospitality with immersive digital storytelling, direct booking funnels, and unforgettable guest journeys.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&auto=format&fit=crop&q=80'
+    image: luxuryLodges
   },
   {
     id: 3,
     title: 'Retail Stores',
     description: 'Bridging brick-and-mortar charm with high-converting omnichannel campaigns and captivating visual merchandising.',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&auto=format&fit=crop&q=80'
+    image: retailStores
   },
   {
     id: 4,
     title: 'Restaurants & Food Chains',
     description: 'Crafting crave-worthy visual campaigns, local discovery SEO, and frictionless online ordering experiences.',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&auto=format&fit=crop&q=80'
+    image: restaurantsFood
   },
   {
     id: 5,
     title: 'Corporate Companies',
     description: 'Architecting authoritative brand identity, investor-grade collateral, and scalable B2B enterprise lead generation.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80'
+    image: corporateCompanies
   },
   {
     id: 6,
-    title: 'Warehouses',
+    title: 'Distributors',
     description: 'Streamlining industrial logistics visibility, partner portals, and supply-chain employer branding.',
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&auto=format&fit=crop&q=80'
   },
@@ -44,19 +52,19 @@ const industriesData = [
     id: 7,
     title: 'Automobile Dealers',
     description: 'Driving high-intent test drives and showroom foot traffic through cinematic video and hyper-targeted ads.',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&auto=format&fit=crop&q=80'
+    image: automobile
   },
   {
     id: 8,
     title: 'Spa',
     description: 'Translating tranquility into online bookings with calming aesthetics and automated client re-engagement.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&auto=format&fit=crop&q=80'
+    image: spa
   },
   {
     id: 9,
     title: 'Other Agencies',
     description: 'Serving as trusted white-label partners for creative production, technical development, and media buying.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&auto=format&fit=crop&q=80'
+    image: otherAgencies
   }
 ];
 

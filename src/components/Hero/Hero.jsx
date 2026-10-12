@@ -3,41 +3,46 @@ import './Hero.scss';
 import Button from '../Button/Button';
 import { motion } from 'framer-motion';
 import heroImg from '../../assets/hero.png';
+import photography from '../../assets/images/hero/photography.jpg';
+import seo from '../../assets/images/hero/seo.jpg';
+import marketing from '../../assets/images/hero/marketing-strategy.jpg';
+import creatives from '../../assets/images/hero/creatives.jpg';
+import webDesign from '../../assets/images/hero/web-design.jpg';
 
 const servicesCards = [
   {
     id: 1,
     title: 'Marketing Strategy',
     description: 'We help you plan, position, and communicate your brand with a strategic roadmap.',
-    image: heroImg,
+    image: marketing,
     badge: 'Strategy'
   },
   {
     id: 2,
     title: 'Creatives',
     description: 'We create visuals and campaigns that capture attention and elevate your digital presence.',
-    image: heroImg,
+    image: creatives,
     badge: 'Design'
   },
   {
     id: 3,
     title: 'Web Design & Dev',
     description: 'We help you plan, position, and communicate your brand with a strategic roadmap.',
-    image: heroImg,
+    image: webDesign,
     badge: 'Engineering'
   },
   {
     id: 4,
     title: 'SEO & SEM',
     description: 'Data-driven visibility and performance campaigns that drive measurable qualified traffic.',
-    image: heroImg,
+    image: seo,
     badge: 'Growth'
   },
   {
     id: 5,
     title: 'Photography & Video',
     description: 'Studio-grade video production and commercial photography that capture audience attention.',
-    image: heroImg,
+    image: photography,
     badge: 'Production'
   }
 ];
