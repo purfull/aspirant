@@ -1,50 +1,165 @@
+import { useState, useEffect } from 'react';
 import './Header.scss';
 import Button from '../Button/Button';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const navLinks = [
+  { name: 'Services', href: '#services' },
+  { name: 'Works', href: '#works' },
+  { name: 'Industries', href: '#industries' },
+  { name: 'Process', href: '#process' },
+  { name: 'About', href: '#about' },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'FAQ', href: '#faq' },
+];
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu on resize if screen becomes desktop size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Close menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <motion.header 
-      className="header"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <div className="header-container">
-        <div className="header-logo">
-          <div className="logo-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 22h20L12 2z" fill="currentColor"/>
-            </svg>
+    <>
+      <motion.header 
+        className="header"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div className="header-container">
+          <div className="header-logo">
+            <div className="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 22h20L12 2z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span>Aspirantideas</span>
           </div>
-          <span>Aspirantideas</span>
-        </div>
 
-        <nav className="header-nav">
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#industries">Industries</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="header-nav">
+            <ul>
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href}>{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <div className="header-cta">
-          <Button 
-            variant="primary"
-            onClick={() => {
-              const el = document.getElementById('contact');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
+          {/* Desktop CTA */}
+          <div className="header-cta">
+            <Button 
+              variant="primary"
+              onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Let's Talk
+            </Button>
+          </div>
+
+          {/* Mobile & Tablet Burger Menu Button */}
+          <button 
+            type="button"
+            className={`header-burger-btn ${isMenuOpen ? 'open' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
           >
-            Let's Talk
-          </Button>
+            <span className="burger-line line-1"></span>
+            <span className="burger-line line-2"></span>
+            <span className="burger-line line-3"></span>
+          </button>
         </div>
-      </div>
-    </motion.header>
+      </motion.header>
+
+      {/* Mobile & Tablet Half-Screen Slide Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            {/* Backdrop overlay for bottom of screen */}
+            <motion.div 
+              className="mobile-menu-backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            {/* Slide down half-screen drawer */}
+            <motion.div 
+              className="mobile-menu-drawer"
+              initial={{ y: '-100%', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: '-100%', opacity: 0 }}
+              transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="mobile-menu-inner">
+                <nav className="mobile-nav-list">
+                  {navLinks.map((link, idx) => (
+                    <motion.a
+                      key={link.name}
+                      href={link.href}
+                      className="mobile-nav-item"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.25, delay: 0.04 + idx * 0.03 }}
+                      onClick={(e) => handleNavClick(e, link.href)}
+                    >
+                      <span className="item-name">{link.name}</span>
+                      <span className="item-arrow">→</span>
+                    </motion.a>
+                  ))}
+                </nav>
+
+                <div className="mobile-menu-cta">
+                  <Button 
+                    variant="primary"
+                    className="mobile-cta-btn"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Let's Talk
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
