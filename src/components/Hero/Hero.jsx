@@ -74,8 +74,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Premium Digital Marketing<br />
-          <em>for Ambitious Brands.</em>
+          Stop the Scroll.{" "}
+          <em>Start to Scale.</em>
         </motion.h1>
 
         <motion.p 
@@ -84,7 +84,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          We craft data-driven digital strategies that connect your brand to the right audiences, drive real growth, and deliver measurable ROI across Africa and beyond.
+          We're the creative social and digital crew for brands that are done blending in. Scroll-stopping content, ads that actually convert, and websites built to grow, for ambitious businesses across Southern Africa & India.
         </motion.p>
 
         <motion.div 
@@ -93,7 +93,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button variant="primary">Book a 30 mins call</Button>
+          <Button variant="primary">Book a Free Strategy Call</Button>
           <Button 
             variant="outline"
             onClick={() => {
@@ -101,7 +101,7 @@ const Hero = () => {
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            Our Works
+            See What We Do ↓
           </Button>
         </motion.div>
 

@@ -6,28 +6,33 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     id: 1,
-    question: 'What is Framer?',
-    answer: 'Framer is a modern visual web design and publishing platform that allows us to create fast, beautifully animated, and responsive digital experiences without compromising on code quality or speed.'
+    question: 'Where are you based, and do you work outside Botswana?',
+    answer: 'HQ is in Gaborone, Botswana, with active clients across Southern Africa and India. Wherever your customers are scrolling, we can reach them.'
   },
   {
     id: 2,
-    question: 'How do you tailor marketing strategies for our brand?',
-    answer: 'We begin with thorough research into your competitive landscape, target audience behaviors, and past campaign performance. From there, we architect customized growth funnels across paid, organic, and creative channels.'
+    question: 'Are you only for big corporates?',
+    answer: `Nope. We work with startups, SMEs and corporates. We size the plan to your goals and your budget, so you never pay for stuff you don't need.`
   },
   {
     id: 3,
-    question: 'What is the typical timeline to see measurable results?',
-    answer: 'Paid advertising and conversion optimization often generate measurable traction within 2 to 4 weeks, while search visibility, brand positioning, and content strategies typically compound strongly over 3 to 6 months.'
+    question: 'What does working with you look like?',
+    answer: 'Discovery call, tailored game plan, agreed scope, then we get to work. Expect regular check-ins and reports that actually make sense.'
   },
   {
     id: 4,
-    question: 'What core services does Aspirant Ideas offer?',
-    answer: 'Our full-suite expertise covers Brand & Marketing Strategy, High-End Creatives, Web Design & Development, SEO & Performance Marketing (SEM), and Professional Photography & Videography.'
+    question: 'How fast will I see results?',
+    answer: 'Paid campaigns can start delivering within days. SEO, content and brand building usually hit their stride within 3 to 6 months of consistent posting. Good things compound.'
   },
   {
     id: 5,
-    question: 'Can your team collaborate with our in-house marketers?',
-    answer: 'Yes! We frequently operate as a strategic extension of existing in-house teams, augmenting your creative bandwidth, media buying, and analytics capabilities with transparent weekly reporting.'
+    question: 'Can you run our whole digital game?',
+    answer: '100%. Plenty of clients treat us as their full digital team, from content and ads to web and reporting. Others bring us in for one campaign. Both work.'
+  },
+  {
+    id: 6,
+    question: 'How do we get started?',
+    answer: `Hit the button below or email marketing@aspirantideas.com. We'll set up a quick call and map out your next big move.`
   }
 ];
 

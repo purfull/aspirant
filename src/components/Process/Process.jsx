@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const processSteps = [
   {
     id: 1,
-    title: 'We Create',
-    description: 'We create visuals and campaigns that capture attention, inspire engagement, and elevate your digital presence.',
+    title: 'Ideate',
+    description: 'We deep-dive your brand, your audience and your competitors, then map out the angles that will make people stop scrolling.',
     icon: (
       <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 6C12.268 6 6 12.268 6 20C6 27.732 12.268 34 20 34C21.657 34 23 32.657 23 31C23 30.204 22.684 29.48 22.172 28.948C21.668 28.424 21.35 27.72 21.35 26.944C21.35 25.318 22.668 24 24.294 24H27C31.418 24 35 20.418 35 16C35 10.477 28.284 6 20 6Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -19,8 +19,8 @@ const processSteps = [
   },
   {
     id: 2,
-    title: 'We Monitor',
-    description: 'We craft data-driven strategies that connect your brand to the right audiences and drive real growth.',
+    title: 'Create',
+    description: `Our creators, designers and videographers cook up content made for the feed and tuned to your audience's vibe.`,
     icon: (
       <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 20C4 20 9.5 10 20 10C30.5 10 36 20 36 20C36 20 30.5 30 20 30C9.5 30 4 20 4 20Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -31,8 +31,8 @@ const processSteps = [
   },
   {
     id: 3,
-    title: 'We Analyze',
-    description: "We analyze your campaign data to reveal what works, what doesn't, and how to improve your overall impact.",
+    title: 'Launch & Boost',
+    description: "We post, promote and put budget behind what's working, tracking every click, lead and view in real time.",
     icon: (
       <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="7" y="15" width="10" height="15" rx="5" stroke="white" strokeWidth="2"/>
@@ -45,8 +45,8 @@ const processSteps = [
   },
   {
     id: 4,
-    title: 'We Deliver',
-    description: 'We deliver measurable growth, visibility, and ROI through the right strategy and execution.',
+    title: 'Scale',
+    description: `We double down on the winners, cut what's not landing, and report it back in plain language. Then we run it back, bigger.`,
     icon: (
       <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="6" y="9" width="28" height="18" rx="3" stroke="white" strokeWidth="2"/>
@@ -93,13 +93,13 @@ const Process = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="process-badge">
-            <span className="dot"></span> Our Process
+            <span className="dot"></span> How We Work
           </div>
           <h2 className="process-title">
-            Simple <em>Process</em>
+            The Glow-Up Playbook
           </h2>
           <p className="process-subtitle">
-            Our Process ensure you reach the right audiance
+            Four steps. Zero guesswork. Built to take your brand from quiet to everywhere.
           </p>
         </motion.div>
 

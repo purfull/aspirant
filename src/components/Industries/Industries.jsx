@@ -14,14 +14,14 @@ import corporateCompanies from "../../assets/images/other-industries/corporate-c
 const industriesData = [
   {
     id: 1,
-    title: 'Educational Institutions',
-    description: 'We create intuitive platforms that simplify learning and administration. Focused on accessibility, clarity, and seamless user experiences.',
+    title: 'Education & Training',
+    description: 'Universities, colleges and schools filling seats',
     image: educationalInstitutions
   },
   {
     id: 2,
-    title: 'Luxury Lodges',
-    description: 'Elevating boutique hospitality with immersive digital storytelling, direct booking funnels, and unforgettable guest journeys.',
+    title: 'Hospitality & Tourism',
+    description: 'Lodges, safaris, hotels and restaurants worth the trip',
     image: luxuryLodges
   },
   {

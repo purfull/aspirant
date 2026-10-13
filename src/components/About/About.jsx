@@ -2,10 +2,10 @@ import './About.scss';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: 'Years in Marketing', value: '27+' },
-  { label: 'Brands Served+', value: '50+' },
-  { label: 'Countries Served', value: '3' },
-  { label: 'Core Services', value: '5' }
+  { label: 'Years in the Game', value: '27+' },
+  { label: 'Clients Worldwide', value: '50+' },
+  { label: 'Creatives Shipped', value: '1K+' },
+  { label: 'Countries Served', value: '3' }
 ];
 
 const About = () => {
@@ -20,7 +20,7 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <span className="dot"></span> About Us
+          <span className="dot"></span> Who We Are
         </motion.div>
 
         <motion.p 
@@ -30,14 +30,11 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          DNA Media t/a Aspirant Ideas is a digital marketing company
-          on a mission: to ideate strategies for our clients through
-          creatively niche visuals channelled through exactly the right
-          mediums. Led by Dr. Arun Prasanna Gandhi <span className="highlight">(DBA, MCIM 4 27
-          years of marketing experience across Botswana, India and
-          South Africa)</span>, our team of strategists, designers,
-          videographers and social media specialists are passionate
-          about helping businesses stand out, connect, and grow.
+          Aspirant Ideas is a Gaborone-born digital crew building the online presence of brands that want to scale, and fast. We live where your customers scroll, and we make sure your brand shows up there as the main character.
+
+          Led by Dr. Arun Prasanna Gandhi <span className="highlight">(DBA, MCIM, 27+ years in marketing across Botswana, India and South Africa)</span>, our squad of strategists, designers, creators, videographers and ads nerds turns ideas into content people actually stop for.
+
+          Your aspirations, our obsession. No fluff, no guesswork. Just creative that hits and numbers that prove it.
         </motion.p>
 
         <motion.div 
