@@ -1,15 +1,23 @@
 import './Clients.scss';
 import { motion } from 'framer-motion';
+import botho from "../../assets/images/client/botho.png";
+import pets from "../../assets/images/client/pets.png";
+import alpha from "../../assets/images/client/alpha.png";
+import saguni from "../../assets/images/client/saguni.png";
+import enco from "../../assets/images/client/enco.png";
+import khwai from "../../assets/images/client/khwai.png";
+import bukhara from "../../assets/images/client/bukhara.png";
+import nf from "../../assets/images/client/nf.png";
 
 const brands = [
-  { id: 1, name: 'Frame Blox', icon: '◑' },
-  { id: 2, name: 'Supa Blox', icon: '◯' },
-  { id: 3, name: 'Hype Blox', icon: '⧖' },
-  { id: 4, name: 'Ultra Blox', icon: '◖' },
-  { id: 5, name: 'Ship Blox', icon: '⫸' },
-  { id: 6, name: 'Frame Blox', icon: '◑' },
-  { id: 7, name: 'Ultra Blox', icon: '◖' },
-  { id: 8, name: 'Ship Blox', icon: '⫸' },
+  { id: 1, name: 'Frame Blox', image: botho },
+  { id: 2, name: 'Supa Blox', image: pets },
+  { id: 3, name: 'Hype Blox', image: alpha },
+  { id: 4, name: 'Ultra Blox', image: saguni },
+  { id: 5, name: 'Ship Blox', image: enco },
+  { id: 6, name: 'Frame Blox', image: khwai },
+  { id: 7, name: 'Ultra Blox', image: bukhara },
+  { id: 8, name: 'Ship Blox', image: nf },
 ];
 
 const containerVariants = {
@@ -50,8 +58,9 @@ const Clients = () => {
         >
           {brands.map((brand, index) => (
             <motion.div key={index} className="brand-card" variants={itemVariants}>
-              <span className="brand-icon">{brand.icon}</span>
-              <span className="brand-name">{brand.name}</span>
+              {/* <span className="brand-icon">{brand.icon}</span>
+              <span className="brand-name">{brand.name}</span> */}
+              <img src={brand.image} alt="" srcset="" />
             </motion.div>
           ))}
         </motion.div>
