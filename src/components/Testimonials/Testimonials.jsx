@@ -92,14 +92,14 @@ const Testimonials = () => {
               </p>
               
               <div className="testimonial-author">
-                <img 
+                {/* <img 
                   src={item.avatar} 
                   alt={item.author} 
                   className="author-avatar" 
-                />
+                /> */}
                 <div className="author-info">
-                  <span className="author-name">{item.author}</span>
-                  <span className="author-role">{item.role}</span>
+                  <span className="author-name">{item.role}</span>
+                  {/* <span className="author-role">{item.role}</span> */}
                 </div>
               </div>
             </motion.div>

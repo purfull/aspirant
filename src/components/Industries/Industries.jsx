@@ -14,56 +14,56 @@ import corporateCompanies from "../../assets/images/other-industries/corporate-c
 const industriesData = [
   {
     id: 1,
-    title: 'Education & Training',
-    description: 'Universities, colleges and schools filling seats',
+    title: 'Social Media Marketing',
+    description: 'Always-on content calendars, community management and trend-jacking done right. We make your feed the place people actually want to be, across Instagram, TikTok, Facebook, LinkedIn and YouTube.',
     image: educationalInstitutions
   },
   {
     id: 2,
-    title: 'Hospitality & Tourism',
-    description: 'Lodges, safaris, hotels and restaurants worth the trip',
+    title: 'Paid Media Campaigns',
+    description: 'Meta and Google ads built to convert, not just collect likes. We test, tweak and scale what works, with full receipts on every Pula spent.',
     image: luxuryLodges
   },
   {
     id: 3,
-    title: 'Retail Stores',
-    description: 'Bridging brick-and-mortar charm with high-converting omnichannel campaigns and captivating visual merchandising.',
+    title: 'Video & Short-Form Content',
+    description: 'Reels, TikToks, brand films and testimonial content engineered for the first three seconds. Hook, story, payoff. Every time.',
     image: retailStores
   },
   {
     id: 4,
-    title: 'Restaurants & Food Chains',
-    description: 'Crafting crave-worthy visual campaigns, local discovery SEO, and frictionless online ordering experiences.',
+    title: 'Photography & Video for Business',
+    description: 'Brand shoots, product photography and corporate content that makes your business look as good as it actually is.',
     image: restaurantsFood
   },
   {
     id: 5,
-    title: 'Corporate Companies',
-    description: 'Architecting authoritative brand identity, investor-grade collateral, and scalable B2B enterprise lead generation.',
+    title: 'Design for Digital',
+    description: 'Social creatives, ad designs, motion graphics and UI that pop on every screen. Zero boring templates, all main character visuals.',
     image: corporateCompanies
   },
   {
     id: 6,
-    title: 'Distributors',
-    description: 'Streamlining industrial logistics visibility, partner portals, and supply-chain employer branding.',
+    title: 'Website Development',
+    description: 'Fast, mobile-first websites, landing pages and e-commerce builds that turn visitors into leads. Clean code, cleaner conversions.',
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&auto=format&fit=crop&q=80'
   },
   {
     id: 7,
-    title: 'Automobile Dealers',
-    description: 'Driving high-intent test drives and showroom foot traffic through cinematic video and hyper-targeted ads.',
+    title: 'SEO & Search',
+    description: 'Get found when it matters. Keyword strategy, technical SEO and search marketing that gets you to page one and keeps you there.',
     image: automobile
   },
   {
     id: 8,
-    title: 'Spa',
-    description: 'Translating tranquility into online bookings with calming aesthetics and automated client re-engagement.',
+    title: 'Marketing Technologies',
+    description: 'CRM setup, lead-routing automation, conversion tracking and live dashboards. The behind-the-scenes tech that makes growth repeatable.',
     image: spa
   },
   {
     id: 9,
-    title: 'Other Agencies',
-    description: 'Serving as trusted white-label partners for creative production, technical development, and media buying.',
+    title: 'Onsite Event Support',
+    description: 'Live coverage, content capture and digital activations at launches, conferences and brand events. If it happens, it gets posted.',
     image: otherAgencies
   }
 ];
@@ -108,12 +108,14 @@ const Industries = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="industries-badge">
-            <span className="dot"></span> Our Focus
+            <span className="dot"></span> What We Do
           </div>
           <h2 className="industries-title">
-            Industries We Empower with<br />
-            <em>Design & Innovation</em>
+            From Unknown to Unforgettable
           </h2>
+          <p className="process-subtitle">
+            Content, ads, tech and tools under one roof. Pick one, or let us run the whole playbook.
+          </p>
         </motion.div>
 
         <motion.div 
