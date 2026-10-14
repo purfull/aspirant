@@ -1,6 +1,7 @@
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Works from './components/Works/Works';
+import Services from './components/Services/Services';
 import Industries from './components/Industries/Industries';
 import Process from './components/Process/Process';
 import Clients from './components/Clients/Clients';
@@ -18,6 +19,7 @@ function App() {
         <About />
         <Clients />
         <Process />
+        <Services />
         <Works />
         <Industries />
         <Testimonials />
