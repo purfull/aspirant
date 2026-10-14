@@ -32,7 +32,7 @@ const servicesCards = [
   },
   {
     id: 4,
-    title: 'SEO & SEM',
+    title: 'Digital Marketing',
     description: 'Data-driven visibility and performance campaigns that drive measurable qualified traffic.',
     image: seo,
     badge: 'Growth'

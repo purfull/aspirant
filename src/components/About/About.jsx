@@ -30,11 +30,14 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Aspirant Ideas is a Gaborone-born digital crew building the online presence of brands that want to scale, and fast. We live where your customers scroll, and we make sure your brand shows up there as the main character.
+          Aspirant Ideas is a digital marketing agency blending creativity, technology and authentic storytelling to bring brands closer to their audiences. In an AI-driven world, we champion real people, real experiences and innovative digital solutions. From social media and digital campaigns to web solutions and technology-driven brand experiences, our team of strategists, designers, videographers and social media specialists goes beyond the screen, capturing content on-site that helps businesses stand out, connect and grow.
 
-          Led by Dr. Arun Prasanna Gandhi <span className="highlight">(DBA, MCIM, 27+ years in marketing across Botswana, India and South Africa)</span>, our squad of strategists, designers, creators, videographers and ads nerds turns ideas into content people actually stop for.
 
-          Your aspirations, our obsession. No fluff, no guesswork. Just creative that hits and numbers that prove it.
+
+          <span className="highlight"></span>
+
+Your brand has a story worth telling. Let's make your audience stop, engage and take action.
+          
         </motion.p>
 
         <motion.div 

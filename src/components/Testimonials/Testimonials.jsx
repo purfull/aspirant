@@ -4,30 +4,30 @@ import { motion } from 'framer-motion';
 const testimonials = [
   {
     id: 1,
-    quote: 'We provided AI-driven workflow automation, reducing manual tasks and improving efficiency across teams.',
-    author: 'David Warner',
-    role: 'CTO of Tech Solution',
+    quote: 'Team Aspirant’s creative thinking, strategic direction and reliable execution made our creative campaigns and event collaborations seamless.',
+    author: 'Alpha Direct Insurance Co',
+    role: 'Alpha Direct Insurance Co',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80'
   },
   {
     id: 2,
-    quote: 'We provided AI-driven workflow automation, reducing manual tasks and improving efficiency across teams.',
+    quote: 'Transformed a food concept into one of Botswana’s recognised premium dining brands through strategic branding, creative marketing and consistent growth, now spanning three successful branches.',
     author: 'David Warner',
-    role: 'CTO of Tech Solution',
+    role: 'Bukhara Restaurant',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80'
   },
   {
     id: 3,
-    quote: 'We provided AI-driven workflow automation, reducing manual tasks and improving efficiency across teams.',
+    quote: 'Partnered with BTCAT for over a decade, contributing both as an external volunteer and through leadership committee roles across creative, content and event management, while championing eco-friendly practices and fund raising initiatives.',
     author: 'David Warner',
-    role: 'CTO of Tech Solution',
+    role: 'Botswana Tamil Cultural Association Trust',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80'
   },
   {
     id: 4,
-    quote: 'We provided AI-driven workflow automation, reducing manual tasks and improving efficiency across teams.',
-    author: 'David Warner',
-    role: 'CTO of Tech Solution',
+    quote: 'Aspirant team, brought our camp to life through authentic on-site content, strategic storytelling and stunning aerial visuals that captured the true Okavango Delta experience.',
+    author: 'Judge Sango',
+    role: 'Saguni Group',
     avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=120&auto=format&fit=crop&q=80'
   }
 ];

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Header.scss';
 import Button from '../Button/Button';
+import logo from '/logo.png';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -56,12 +57,7 @@ const Header = () => {
       >
         <div className="header-container">
           <div className="header-logo">
-            <div className="logo-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 22h20L12 2z" fill="currentColor"/>
-              </svg>
-            </div>
-            <span>Aspirantideas</span>
+            <img src={logo} alt="aspirants-logo" />
           </div>
 
           {/* Desktop Navigation */}
