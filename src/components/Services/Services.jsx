@@ -1,15 +1,15 @@
 import './Services.scss';
 import { motion } from 'framer-motion';
 import { 
-  Share2, 
-  Target, 
-  Video, 
-  Camera, 
-  Palette, 
-  Globe, 
-  Search, 
+  ShieldCheck, 
+  GraduationCap, 
+  Hotel, 
   Cpu, 
-  Sparkles 
+  ShoppingBag, 
+  HeartPulse, 
+  Car, 
+  Sparkles, 
+  Briefcase 
 } from 'lucide-react';
 
 const servicesData = [
@@ -17,55 +17,55 @@ const servicesData = [
     id: 1,
     title: 'Insurance & Financial Services',
     description: 'Lead-gen machines for insurers, banks and fintechs.',
-    icon: Share2
+    icon: ShieldCheck
   },
   {
     id: 2,
     title: 'Education & Training',
     description: 'Universities, colleges and schools filling seats.',
-    icon: Target
+    icon: GraduationCap
   },
   {
     id: 3,
     title: 'Hospitality & Tourism',
     description: 'Lodges, safaris, hotels and restaurants worth the trip.',
-    icon: Video
+    icon: Hotel
   },
   {
     id: 4,
     title: 'Technology & SaaS',
     description: 'Tech companies, software and IT solutions.',
-    icon: Camera
+    icon: Cpu
   },
   {
     id: 5,
     title: 'Retail & FMCG',
     description: 'Stores, distributors and consumer brands.',
-    icon: Palette
+    icon: ShoppingBag
   },
   {
     id: 6,
     title: 'Health & Wellness',
     description: 'Clinics, hospitals and wellness providers.',
-    icon: Globe
+    icon: HeartPulse
   },
   {
     id: 7,
     title: 'Automotive',
     description: 'Dealers, service centres and fleet companies.',
-    icon: Search
+    icon: Car
   },
   {
     id: 8,
     title: 'Beauty & Lifestyle',
     description: 'Spas, beauty brands and lifestyle businesses.',
-    icon: Cpu
+    icon: Sparkles
   },
   {
     id: 9,
     title: 'Corporate & B2B',
     description: 'Professional services and corporates going digital-first.',
-    icon: Sparkles
+    icon: Briefcase
   }
 ];
 
@@ -130,7 +130,7 @@ const Services = ({
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
-          {servicesData.map((card) => {
+          {cards.map((card) => {
             const IconComponent = card.icon;
 
             return (
