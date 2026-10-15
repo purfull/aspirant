@@ -50,7 +50,7 @@ const Hero = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
   return (
-    <section className="hero">
+    <section className="hero" id='hero'>
       <div className="hero-glow"></div>
       
       <div className="hero-content">
@@ -97,7 +97,7 @@ const Hero = () => {
           <Button 
             variant="outline"
             onClick={() => {
-              const el = document.getElementById('works');
+              const el = document.getElementById('industries');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
           >

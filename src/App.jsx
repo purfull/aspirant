@@ -12,6 +12,7 @@ import CTA from './components/CTA/CTA';
 import FAQ from './components/FAQ/FAQ';
 
 function App() {
+  
   return (
     <div className="app-container">
       <Header />
