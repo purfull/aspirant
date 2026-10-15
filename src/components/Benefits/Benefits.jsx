@@ -1,7 +1,7 @@
 import React from 'react';
 import './Benefits.scss';
 import Button from '../Button/Button';
-import banner from '../../assets/images/tech/tech-banner.jpeg';
+import banner from '../../assets/images/tech/tech-banner.png';
 import { motion } from 'framer-motion';
 import { 
   Target, 
@@ -19,7 +19,7 @@ const Benefits = ({
   onCtaClick
 }) => {
   const handleOpenHtml = () => {
-    window.open('/Kalai_Vizha.html', '_blank', 'noopener,noreferrer');
+    window.open('/TheSelfieBooth.html', '_blank', 'noopener,noreferrer');
   };
   const valuePillars = [
     {
