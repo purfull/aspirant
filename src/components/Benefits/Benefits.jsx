@@ -41,7 +41,7 @@ const Benefits = ({
 
 
   return (
-    <section className="benefits" id="benefits">
+    <section className="benefits" id="technology">
       {/* Anchor helper in case old link used '#penefits' */}
       <span id="penefits" style={{ position: 'absolute', top: '-80px', visibility: 'hidden' }} />
 

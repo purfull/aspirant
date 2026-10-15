@@ -214,7 +214,7 @@ const Works = ({
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <span className="dot"></span> Our Works
+          <span className="dot"></span> Our Work
         </motion.div>
 
         <motion.h2 

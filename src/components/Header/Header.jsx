@@ -8,11 +8,11 @@ const navLinks = [
   { name: 'Home', href: 'hero' },
   { name: 'About', href: 'about' },
   { name: 'Works', href: 'works' },
+  // { name: 'Technology', href: 'technology' },
   { name: 'Testimonial', href: 'testimonials' },
-  // { name: 'About', href: 'about' },
   // { name: 'Testimonials', href: 'testimonials' },
   // { name: 'FAQ', href: 'faq' },
-  { name: 'Faq', href: 'faq' },
+  // { name: 'Faq', href: 'faq' },
 ];
 
 const Header = () => {
@@ -46,6 +46,11 @@ const Header = () => {
       target.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const handleWhatsapp = (e) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    window.open('https://wa.me/+26771687825', '_blank');
+  }
 
   return (
     <>
@@ -83,10 +88,7 @@ const Header = () => {
           <div className="header-cta">
             <Button
               variant="primary"
-              onClick={() => {
-                const el = document.getElementById('contact');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={handleWhatsapp}
             >
               Let's Talk
             </Button>
@@ -154,10 +156,7 @@ const Header = () => {
 
                   <Button
                     variant="primary"
-                    onClick={() => {
-                      const el = document.getElementById('contact');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                    onClick={handleWhatsapp}
                   >
                     Let's Talk
                   </Button>

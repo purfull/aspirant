@@ -3,6 +3,11 @@ import Button from '../Button/Button';
 import { motion } from 'framer-motion';
 
 const CTA = () => {
+  
+  const handleWhatsapp = (e) => {
+    e.preventDefault();
+    window.open('https://wa.me/+26771687825', '_blank');
+  }
   return (
     <section className="cta-section" id="contact">
       {/* Scroll-triggered blooming orange ambient background gradient */}
@@ -48,7 +53,7 @@ const CTA = () => {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Button variant="primary">Book a 30 mins Call</Button>
+          <Button variant="primary" onClick={handleWhatsapp}>Book a 30 mins Call</Button>
         </motion.div>
       </div>
     </section>
