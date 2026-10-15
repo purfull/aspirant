@@ -124,26 +124,26 @@ const Hero = () => {
                 onMouseEnter={() => setHoveredId(card.id)}
                 onClick={() => setHoveredId(isHovered ? null : card.id)}
               >
-                {/* Background layers */}
+                {/* Background image covering the card */}
+                <div className="card-image-wrapper">
+                  <img 
+                    src={card.image} 
+                    alt={card.title} 
+                    className="card-preview-image"
+                    loading="eager"
+                  />
+                </div>
+
+                {/* Mild orange gradient overlay */}
                 <div className="card-bg-gradient"></div>
-                <div className="card-bg-dark"></div>
 
                 {/* Vertical Title (visible when unhovered) */}
                 <span className="card-title-vertical">
                   {card.title}
                 </span>
 
-                {/* Expanded Content (smoothly faded in on hover without DOM thrashing) */}
+                {/* Expanded Content (info pane smoothly revealed on hover) */}
                 <div className="card-expanded-content">
-                  <div className="card-image-wrapper">
-                    <img 
-                      src={card.image} 
-                      alt={card.title} 
-                      className="card-preview-image"
-                      loading="eager"
-                    />
-                  </div>
-
                   <div className="card-info-pane">
                     <h3 className="card-expanded-title">{card.title}</h3>
                     <p className="card-expanded-desc">{card.description}</p>
