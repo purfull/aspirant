@@ -2,45 +2,45 @@ import { useState } from 'react';
 import './Hero.scss';
 import Button from '../Button/Button';
 import { motion } from 'framer-motion';
-import photography from '../../assets/images/hero/photography.jpg';
-import seo from '../../assets/images/hero/seo.jpg';
-import marketing from '../../assets/images/hero/marketing-strategy.jpg';
-import creatives from '../../assets/images/hero/creatives.jpg';
-import webDesign from '../../assets/images/hero/web-design.jpg';
+import photography from '../../assets/images/hero/photography.png';
+import seo from '../../assets/images/hero/seo.png';
+import marketing from '../../assets/images/hero/marketing-strategy.png';
+import creatives from '../../assets/images/hero/creatives.png';
+import webDesign from '../../assets/images/hero/web-design.png';
 
 const servicesCards = [
   {
     id: 1,
     title: 'Marketing Strategy',
-    description: 'We help you plan, position, and communicate your brand with a strategic roadmap.',
+    description: 'Big ideas. Smart moves. Bold results. We turn brand ambitions into strategies that actually go places.',
     image: marketing,
     badge: 'Strategy'
   },
   {
     id: 2,
     title: 'Creatives',
-    description: 'We create visuals and campaigns that capture attention and elevate your digital presence.',
+    description: 'No boring visuals here. Just scroll-stopping creativity that makes your brand impossible to ignore.',
     image: creatives,
     badge: 'Design'
   },
   {
     id: 3,
     title: 'Web Design & Dev',
-    description: 'We help you plan, position, and communicate your brand with a strategic roadmap.',
+    description: 'More than a pretty website. We build sleek, smart digital experiences that turn clicks into connections.',
     image: webDesign,
     badge: 'Engineering'
   },
   {
     id: 4,
     title: 'Digital Marketing',
-    description: 'Data-driven visibility and performance campaigns that drive measurable qualified traffic.',
+    description: 'Less noise. More impact. We put your brand in front of the right people and turn attention into action.',
     image: seo,
     badge: 'Growth'
   },
   {
     id: 5,
     title: 'Photography & Video',
-    description: 'Studio-grade video production and commercial photography that capture audience attention.',
+    description: 'Real people. Real moments. Seriously good content. We capture stories your audience actually wants to watch.',
     image: photography,
     badge: 'Production'
   }
@@ -65,7 +65,7 @@ const Hero = () => {
             <img src="https://i.pravatar.cc/100?img=2" alt="Client 2" />
             <img src="https://i.pravatar.cc/100?img=3" alt="Client 3" />
           </div>
-          <span>Trusted by <span className="highlight">150+ Clients</span></span>
+          <span>Trusted by <span className="highlight">50+ Clients</span></span>
         </motion.div>
 
         <motion.h1 

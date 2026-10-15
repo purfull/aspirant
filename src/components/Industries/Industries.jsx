@@ -2,69 +2,70 @@ import { useState } from 'react';
 import './Industries.scss';
 import IndustryCTA from '../IndustryCTA/IndustryCTA';
 import { motion } from 'framer-motion';
-import automobile from "../../assets/images/other-industries/automobile.jpg";
-import otherAgencies from "../../assets/images/other-industries/other-agencies.jpg";
-import spa from "../../assets/images/other-industries/spa.jpg";
-import retailStores from "../../assets/images/other-industries/retail-stores.jpg";
-import educationalInstitutions from "../../assets/images/other-industries/educational-institutions.jpg";
-import luxuryLodges from "../../assets/images/other-industries/luxury-lodges.jpg";
-import restaurantsFood from "../../assets/images/other-industries/restaurants-food.jpg";
-import corporateCompanies from "../../assets/images/other-industries/corporate-companies.jpg";
+import socialMedia from "../../assets/images/other-industries/social-media-marketing.png";
+import paidMedia from "../../assets/images/other-industries/paid-media-campaigns.png";
+import videoContent from "../../assets/images/other-industries/video-short-form-content.png";
+import photography from "../../assets/images/other-industries/photography-video.png";
+import design from "../../assets/images/other-industries/design-for-digital.png";
+import webDev from "../../assets/images/other-industries/website-development.png";
+import seo from "../../assets/images/other-industries/seo.png";
+import marketingTech from "../../assets/images/other-industries/marketing-technologies.png";
+import onsiteEvent from "../../assets/images/other-industries/onsite-event-support.png";
 
 const industriesData = [
   {
     id: 1,
     title: 'Social Media Marketing',
     description: 'Always-on content calendars, community management and trend-jacking done right. We make your feed the place people actually want to be, across Instagram, TikTok, Facebook, LinkedIn and YouTube.',
-    image: educationalInstitutions
+    image: socialMedia
   },
   {
     id: 2,
     title: 'Paid Media Campaigns',
     description: 'Meta and Google ads built to convert, not just collect likes. We test, tweak and scale what works, with full receipts on every Pula spent.',
-    image: luxuryLodges
+    image: paidMedia
   },
   {
     id: 3,
     title: 'Video & Short-Form Content',
     description: 'Reels, TikToks, brand films and testimonial content engineered for the first three seconds. Hook, story, payoff. Every time.',
-    image: retailStores
+    image: videoContent
   },
   {
     id: 4,
     title: 'Photography & Video for Business',
     description: 'Brand shoots, product photography and corporate content that makes your business look as good as it actually is.',
-    image: restaurantsFood
+    image: photography
   },
   {
     id: 5,
     title: 'Design for Digital',
     description: 'Social creatives, ad designs, motion graphics and UI that pop on every screen. Zero boring templates, all main character visuals.',
-    image: corporateCompanies
+    image: design
   },
   {
     id: 6,
     title: 'Website Development',
     description: 'Fast, mobile-first websites, landing pages and e-commerce builds that turn visitors into leads. Clean code, cleaner conversions.',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&auto=format&fit=crop&q=80'
+    image: webDev
   },
   {
     id: 7,
     title: 'SEO & Search',
     description: 'Get found when it matters. Keyword strategy, technical SEO and search marketing that gets you to page one and keeps you there.',
-    image: automobile
+    image: seo
   },
   {
     id: 8,
     title: 'Marketing Technologies',
     description: 'CRM setup, lead-routing automation, conversion tracking and live dashboards. The behind-the-scenes tech that makes growth repeatable.',
-    image: spa
+    image: marketingTech
   },
   {
     id: 9,
     title: 'Onsite Event Support',
     description: 'Live coverage, content capture and digital activations at launches, conferences and brand events. If it happens, it gets posted.',
-    image: otherAgencies
+    image: onsiteEvent
   }
 ];
 
