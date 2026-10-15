@@ -1,6 +1,7 @@
 import React from 'react';
 import './Benefits.scss';
 import Button from '../Button/Button';
+import banner from '../../assets/images/tech/tech-banner.jpeg';
 import { motion } from 'framer-motion';
 import { 
   Target, 
@@ -53,6 +54,7 @@ const Benefits = ({
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
         >
+          <img src={banner} alt="" className='banner' />
         </motion.div>
 
         {/* Right Column: Content, Typography, Value Pillars, CTA */}
