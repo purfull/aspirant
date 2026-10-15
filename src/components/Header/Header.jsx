@@ -5,14 +5,14 @@ import logo from '/logo.png';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
-  { name: 'Home', href: 'hero' },
-  { name: 'About', href: 'about' },
-  { name: 'Works', href: 'works' },
-  // { name: 'Technology', href: 'technology' },
-  { name: 'Testimonial', href: 'testimonials' },
-  // { name: 'Testimonials', href: 'testimonials' },
-  // { name: 'FAQ', href: 'faq' },
-  // { name: 'Faq', href: 'faq' },
+  { name: 'Process', href: '#process' },
+  { name: 'Services', href: '#services' },
+  { name: 'Benefits', href: '#benefits' },
+  { name: 'Plans', href: '#plans' },
+  // { name: 'About', href: '#about' },
+  // { name: 'Testimonials', href: '#testimonials' },
+  // { name: 'FAQ', href: '#faq' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const Header = () => {
@@ -46,26 +46,17 @@ const Header = () => {
       target.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  const handleWhatsapp = (e) => {
-    e.preventDefault();
-    setIsMenuOpen(false);
-    window.open('https://wa.me/+26771687825', '_blank');
-  }
 
   return (
     <>
-      <motion.header
+      <motion.header 
         className="header"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="header-container">
-          <div className="header-logo"
-            onClick={() => {
-              const el = document.getElementById('hero');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}>
+          <div className="header-logo">
             <img src={logo} alt="aspirants-logo" />
           </div>
 
@@ -74,11 +65,7 @@ const Header = () => {
             <ul>
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <button href={link.href}
-                    onClick={() => {
-                      const el = document.getElementById(link.href);
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}>{link.name}</button>
+                  <a href={link.href}>{link.name}</a>
                 </li>
               ))}
             </ul>
@@ -86,16 +73,19 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="header-cta">
-            <Button
+            <Button 
               variant="primary"
-              onClick={handleWhatsapp}
+              onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Let's Talk
             </Button>
           </div>
 
           {/* Mobile & Tablet Burger Menu Button (smooth morph from 3 bars to X) */}
-          <button
+          <button 
             type="button"
             className={`header-burger-btn ${isMenuOpen ? 'open' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -114,7 +104,7 @@ const Header = () => {
         {isMenuOpen && (
           <>
             {/* Backdrop overlay for bottom of screen */}
-            <motion.div
+            <motion.div 
               className="mobile-menu-backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -124,7 +114,7 @@ const Header = () => {
             />
 
             {/* Slide down half-screen drawer with pure black minimalist style */}
-            <motion.div
+            <motion.div 
               className="mobile-menu-drawer"
               initial={{ y: '-100%', opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -135,31 +125,33 @@ const Header = () => {
                 {/* Clean, left-aligned minimalist link list */}
                 <nav className="mobile-nav-list">
                   {navLinks.map((link, idx) => (
-                    <motion.button
+                    <motion.a
                       key={link.name}
+                      href={link.href}
                       className="mobile-nav-item"
                       initial={{ opacity: 0, x: -12 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.22, delay: 0.03 + idx * 0.025 }}
-                      onClick={() => {
-                        const el = document.getElementById(link.href);
-                        if (el) { el.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); };
-                      }}
+                      onClick={(e) => handleNavClick(e, link.href)}
                     >
                       {link.name}
-                    </motion.button>
+                    </motion.a>
                   ))}
                 </nav>
 
                 {/* Orange pill button with right arrow */}
                 <div className="mobile-menu-cta">
-
-                  <Button
-                    variant="primary"
-                    onClick={handleWhatsapp}
+                  <button 
+                    type="button"
+                    className="mobile-talk-btn"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                   >
-                    Let's Talk
-                  </Button>
+                    <span>Let's Talk</span>
+                    <span className="arrow-icon">↗</span>
+                  </button>
                 </div>
               </div>
             </motion.div>

@@ -49,16 +49,12 @@ const servicesCards = [
 const Hero = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
-  const handleWhatsapp = (e) => {
-    e.preventDefault();
-    window.open('https://wa.me/+26771687825', '_blank');
-  }
   return (
     <section className="hero" id='hero'>
       <div className="hero-glow"></div>
-
+      
       <div className="hero-content">
-        <motion.div
+        <motion.div 
           className="hero-badge"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +68,7 @@ const Hero = () => {
           <span>Trusted by <span className="highlight">50+ Clients</span></span>
         </motion.div>
 
-        <motion.h1
+        <motion.h1 
           className="hero-title"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,7 +78,7 @@ const Hero = () => {
           <em>Start to Scale.</em>
         </motion.h1>
 
-        <motion.p
+        <motion.p 
           className="hero-subtitle"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -91,14 +87,14 @@ const Hero = () => {
           We're the creative social and digital crew for brands that are done blending in. Scroll-stopping content, ads that actually convert, and websites built to grow, for ambitious businesses across Southern Africa & India.
         </motion.p>
 
-        <motion.div
+        <motion.div 
           className="hero-actions"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button variant="primary" onClick={handleWhatsapp}>Book a Free Strategy Call</Button>
-          <Button
+          <Button variant="primary">Book a Free Strategy Call</Button>
+          <Button 
             variant="outline"
             onClick={() => {
               const el = document.getElementById('industries');
@@ -110,7 +106,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Interactive Cards Section - 80% screen width on desktop, hidden on mobile */}
-        <motion.div
+        <motion.div 
           className="hero-cards-container"
           id="services"
           initial={{ opacity: 0, y: 40 }}
@@ -122,7 +118,7 @@ const Hero = () => {
             const isHovered = hoveredId === card.id;
 
             return (
-              <div
+              <div 
                 key={card.id}
                 className={`hero-card ${isHovered ? 'is-hovered' : ''}`}
                 onMouseEnter={() => setHoveredId(card.id)}
@@ -130,9 +126,9 @@ const Hero = () => {
               >
                 {/* Background image covering the card */}
                 <div className="card-image-wrapper">
-                  <img
-                    src={card.image}
-                    alt={card.title}
+                  <img 
+                    src={card.image} 
+                    alt={card.title} 
                     className="card-preview-image"
                     loading="eager"
                   />

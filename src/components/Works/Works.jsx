@@ -163,14 +163,14 @@ const allWorks = [...row1, ...row2, ...row3];
 
 const Works = ({
   showControlsInitial = true,
-  showIndicatorsInitial = false,
+  showIndicatorsInitial = true,
   autoScrollInterval = 3200
 }) => {
   // Mobile carousel state
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [showControls, setShowControls] = useState(showControlsInitial);
-  const [showIndicators, setShowIndicators] = useState(false);
+  const [showIndicators, setShowIndicators] = useState(showIndicatorsInitial);
   const [showSettings, setShowSettings] = useState(false);
 
   const timerRef = useRef(null);
@@ -214,7 +214,7 @@ const Works = ({
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <span className="dot"></span> Our Work
+          <span className="dot"></span> Our Works
         </motion.div>
 
         <motion.h2 
@@ -287,7 +287,43 @@ const Works = ({
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-      
+        {/* Toggle options bar for controllers & indicators */}
+        <div className="mobile-carousel-options-bar">
+          <button 
+            className={`options-toggle-btn ${showSettings ? 'active' : ''}`}
+            onClick={() => setShowSettings(!showSettings)}
+            aria-label="Carousel settings"
+          >
+            <SlidersHorizontal size={14} />
+            <span>Display Options</span>
+          </button>
+
+          <AnimatePresence>
+            {showSettings && (
+              <motion.div 
+                className="options-popup"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+              >
+                <button 
+                  className={`option-chip ${showControls ? 'selected' : ''}`}
+                  onClick={() => setShowControls(!showControls)}
+                >
+                  <span className="checkbox">{showControls && <Check size={12} />}</span>
+                  Show Controls
+                </button>
+                <button 
+                  className={`option-chip ${showIndicators ? 'selected' : ''}`}
+                  onClick={() => setShowIndicators(!showIndicators)}
+                >
+                  <span className="checkbox">{showIndicators && <Check size={12} />}</span>
+                  Show Indicators
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         {/* Carousel Slide Area */}
         <div className="carousel-track-wrapper">

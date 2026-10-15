@@ -22,11 +22,6 @@ const PARTICLES = Array.from({ length: 102 }).map((_, i) => {
 });
 
 const IndustryCTA = () => {
-  
-  const handleWhatsapp = (e) => {
-    e.preventDefault();
-    window.open('https://wa.me/+26771687825', '_blank');
-  }
   return (
     <div className="industry-cta-wrapper">
       <motion.div 
@@ -74,7 +69,7 @@ const IndustryCTA = () => {
           </p>
 
           <div className="industry-cta-action">
-            <Button variant="primary" onClick={handleWhatsapp}>Book a 30 mins Call</Button>
+            <Button variant="primary">Book a 30 mins Call</Button>
           </div>
         </div>
       </motion.div>
