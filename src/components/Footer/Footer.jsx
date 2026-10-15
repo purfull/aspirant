@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import logo from '/logo.png';
+import dnaLogo from '/dna-media.png';
 
 const Footer = () => {
   return (
@@ -79,87 +80,8 @@ const Footer = () => {
         <div className="footer-right">
           <span className="footer-text">Powered by :</span>
           <div className="dna-media-logo-wrap" title="DNA Media">
-            <svg 
-              className="dna-media-svg"
-              width="100" 
-              height="28" 
-              viewBox="0 0 100 28" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* DNA Bold Typography */}
-              <text 
-                x="0" 
-                y="19" 
-                fill="#FFFFFF" 
-                fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" 
-                fontWeight="900" 
-                fontSize="18.5" 
-                letterSpacing="0.4"
-              >
-                DNA
-              </text>
-              
-              {/* Media subtext beneath A */}
-              <text 
-                x="28.5" 
-                y="26" 
-                fill="#D1D5DB" 
-                fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" 
-                fontWeight="600" 
-                fontSize="6.8" 
-                letterSpacing="0.6"
-              >
-                Media
-              </text>
-
-              {/* Connecting Molecule Lines radiating from central cyan node */}
-              <line x1="41" y1="12" x2="57" y2="15" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-              <line x1="57" y1="15" x2="61" y2="5" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-              <line x1="57" y1="15" x2="72" y2="13" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-              <line x1="57" y1="15" x2="68" y2="23" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-              <line x1="57" y1="15" x2="52" y2="24" stroke="#FFFFFF" strokeWidth="1.4" strokeLinecap="round" />
-
-              {/* Molecule Nodes with 3D spherical radial shading */}
-              {/* Top Orange Node */}
-              <circle cx="61" cy="5" r="4.2" fill="url(#dnaOrange)" />
-              
-              {/* Far Right Coral Node */}
-              <circle cx="72" cy="13" r="3.4" fill="url(#dnaCoral)" />
-              
-              {/* Bottom-Left Peach Node */}
-              <circle cx="52" cy="24" r="3.2" fill="url(#dnaPeach)" />
-              
-              {/* Bottom-Right Purple Node */}
-              <circle cx="68" cy="23" r="5" fill="url(#dnaPurple)" />
-              
-              {/* Central Cyan Node */}
-              <circle cx="57" cy="15" r="3.8" fill="url(#dnaCyan)" />
-
-              <defs>
-                <radialGradient id="dnaOrange" cx="35%" cy="35%" r="65%">
-                  <stop offset="0%" stopColor="#FFA64D" />
-                  <stop offset="100%" stopColor="#FF6B00" />
-                </radialGradient>
-                <radialGradient id="dnaCoral" cx="35%" cy="35%" r="65%">
-                  <stop offset="0%" stopColor="#FF7A7A" />
-                  <stop offset="100%" stopColor="#E63946" />
-                </radialGradient>
-                <radialGradient id="dnaPeach" cx="35%" cy="35%" r="65%">
-                  <stop offset="0%" stopColor="#FFF2E8" />
-                  <stop offset="100%" stopColor="#FDBA74" />
-                </radialGradient>
-                <radialGradient id="dnaPurple" cx="35%" cy="35%" r="65%">
-                  <stop offset="0%" stopColor="#E0C3FC" />
-                  <stop offset="100%" stopColor="#8B5CF6" />
-                </radialGradient>
-                <radialGradient id="dnaCyan" cx="35%" cy="35%" r="65%">
-                  <stop offset="0%" stopColor="#67E8F9" />
-                  <stop offset="100%" stopColor="#0284C7" />
-                </radialGradient>
-              </defs>
-            </svg>
-          </div>
+            <img src={dnaLogo} alt="" srcset="" />
+           </div>
         </div>
 
       </div>

@@ -30,14 +30,7 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Aspirant Ideas is a digital marketing agency blending creativity, technology and authentic storytelling to bring brands closer to their audiences. In an AI-driven world, we champion real people, real experiences and innovative digital solutions. From social media and digital campaigns to web solutions and technology-driven brand experiences, our team of strategists, designers, videographers and social media specialists goes beyond the screen, capturing content on-site that helps businesses stand out, connect and grow.
-
-
-
-          <span className="highlight"></span>
-
-Your brand has a story worth telling. Let's make your audience stop, engage and take action.
-          
+          Aspirant Ideas is a digital marketing agency where creativity, technology and real storytelling collide. In an AI-driven world, we keep it human, blending bold ideas with smart digital solutions. <span className="highlight">From social media and campaigns to websites, video and on-site content</span>, our creative team builds brand experiences that stand out and drive growth.Your brand has a story. We make people stop, connect and take action.
         </motion.p>
 
         <motion.div 

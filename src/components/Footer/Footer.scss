@@ -8,7 +8,7 @@
   justify-content: center;
   position: relative;
   z-index: 10;
-  padding: 16px 24px;
+  padding: 16px 2.5%;
   box-sizing: border-box;
 
   @media (max-width: $bp-mobile) {
@@ -36,6 +36,7 @@
 .footer-left {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-shrink: 0;
 
@@ -57,15 +58,10 @@
     align-items: center;
     transition: opacity 0.2s ease, transform 0.2s ease;
 
-    &:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
   }
 
   .footer-aspirant-logo {
-    height: 25px;
-    width: auto;
+  max-width: 120px;
     object-fit: contain;
     display: block;
   }
@@ -87,7 +83,6 @@
     border-radius: 4px;
 
     &:hover {
-      transform: translateY(-2px) scale(1.05);
       opacity: 0.92;
     }
 
@@ -136,15 +131,8 @@
     align-items: center;
     cursor: default;
     transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.03);
-    }
-
-    .dna-media-svg {
-      display: block;
-      height: 24px;
-      width: auto;
-    }
+img {
+  max-width: 120px;
+}
   }
 }
