@@ -10,6 +10,7 @@ import About from './components/About/About';
 import Testimonials from './components/Testimonials/Testimonials';
 import CTA from './components/CTA/CTA';
 import FAQ from './components/FAQ/FAQ';
+import Footer from './components/Footer/Footer';
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
         {/* <FAQ /> */}
         <CTA />
       </main>
+      <Footer />
     </div>
   );
 }
